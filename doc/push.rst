@@ -32,7 +32,7 @@ Coinserver -> Executes blocknotify script (Alertblock)
 Alertblock -> Parses the passed in .push file
 Alertblock -> Sends a UDP datagram based on that .push file
 PowerPool -> Receives UDP datagram
-PowerPool -> Runs `getblocktemplate` on the Coinserver
+PowerPool -> Runs ``getblocktemplate`` on the Coinserver
 
 Note: Using a pushblock script to deliver a UDP datagram to PowerPool can
 be accomplished in many different ways. We're going to walk
@@ -110,7 +110,7 @@ Powerpool config
 
 Now we need to update PowerPool's config to not poll, as it is no longer needed,
 and makes the coinserver's logs a lot harder to use. All that needs to be done
-is set the `poll` key to False for each currency you have push block setup for.
+is set the ``poll`` key to False for each currency you have push block setup for.
 
 .. code-block:: python
 
@@ -126,5 +126,5 @@ Confirm it is working
 
 You'll want to double check push block notifications are actually
 working as planned. The easiest way is to visit PowerPool's monitoring endpoint
-and look for the `last_signal` key. It should be updated each time PowerPool is
+and look for the ``last_signal`` key. It should be updated each time PowerPool is
 notified of a block via push block.
